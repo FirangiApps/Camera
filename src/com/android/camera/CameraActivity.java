@@ -2275,13 +2275,13 @@ public class CameraActivity extends QuickActivity
 
     protected void initPowerShutter() {
         mPowerShutter = Keys.isPowerShutterOn(mSettingsManager);
-        if (mPowerShutter) {
-            getWindow().addPrivateFlags(
-                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-        } else {
-            getWindow().clearPrivateFlags(
-                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-        }
+//        if (mPowerShutter) {
+//            getWindow().addFlags(
+//                    WindowManager.LayoutParams.FLAG_PREVENT_POWER_KEY);
+//        } else {
+//            getWindow().clearFlags(
+//                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+//        }
     }
 
     protected void initMaxBrightness() {
