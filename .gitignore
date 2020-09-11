@@ -1,4 +1,6 @@
 # Project files and paths.
+.bin
+.lock
 .classpath
 .project
 *.iml
@@ -8,6 +10,16 @@ bin/
 libs/
 gen/
 .idea/
+.idea/libraries/*.xml
+.gitignore
+.project.properties
+.externalNativeBuild/
+tests/stress/gen/
+local.properties
+gradle/
+.gradle/
+build/
+gradlew*
 
 # ignore OS X metadata
 .DS_Store
