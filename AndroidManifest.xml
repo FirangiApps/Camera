@@ -45,7 +45,8 @@
         android:restoreAnyVersion="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Camera"
-        android:usesCleartextTraffic="false" >
+        android:usesCleartextTraffic="false"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name="com.android.camera.CameraActivity"
             android:clearTaskOnLaunch="true"
