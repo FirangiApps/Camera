@@ -2303,6 +2303,7 @@ public class CameraActivity extends QuickActivity
         if (!mFilmstripVisible) {
             if (mPowerShutter && keyCode == KeyEvent.KEYCODE_POWER &&
                     event.getRepeatCount() == 0) {
+                event.startTracking();
                 mCurrentModule.onShutterButtonFocus(true);
                 return true;
             }
@@ -2326,6 +2327,7 @@ public class CameraActivity extends QuickActivity
         if (!mFilmstripVisible) {
             if (mPowerShutter && keyCode == KeyEvent.KEYCODE_POWER) {
                 mCurrentModule.onShutterButtonClick();
+                event.startTracking();
                 return true;
             }
             // If a module is in the middle of capture, it should
