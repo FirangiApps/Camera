@@ -1,0 +1,85 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\Ozone\\ozoneapps.jks')
+            storePassword 'ozone123'
+            keyAlias 'ozone'
+            keyPassword 'ozone123'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion '30.0.1'
+
+    defaultConfig {
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard.flags'
+        }
+    }
+
+    productFlavors {
+        aosp {
+            flavorDimensions 'default'
+            applicationId 'com.android.camera2'
+            testApplicationId 'com.android.camera2.tests'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['res', 'res_p']
+            java.srcDirs = ['src', 'src_pd', 'src_pd_gcam', '../deps/ex/camera2', '../deps/xmp_toolkit/XMPCore/src', '../deps/jsr305/ri/src', '../deps/glide/library', '../deps/glide/third_party']
+            assets.srcDirs = ['assets']
+            manifest.srcFile 'AndroidManifest.xml'
+            jniLibs.srcDirs = ['./jniLibs']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "androidx.core:core:1.3.1"
+    implementation "androidx.legacy:legacy-support-v13:1.0.0"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "com.google.guava:guava:16.0"
+    implementation "androidx.fragment:fragment"
+    testImplementation 'junit:junit:4.13'
+}
